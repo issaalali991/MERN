@@ -1,8 +1,8 @@
 import mongoose from 'mongoose';
 
 const connection = () => {
-
-mongoose.connect('mongodb+srv://issaalali991:jYikyIRCYIE21doY@cluster0.lew9w6o.mongodb.net/mernproject?retryWrites=true&w=majority')
+const connection = process.env.MONGODB_URI ;
+mongoose.connect(connection)
 .then(() => {
     console.log('Database connected');
 })
