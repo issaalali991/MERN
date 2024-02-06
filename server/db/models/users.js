@@ -3,12 +3,12 @@ import connection from '../connection.js';
 
 connection();
 const userSchema = mongoose.Schema({
-    name: String,
-    age: Number,
+    _id: { type: mongoose.Schema.Types.ObjectId, auto: true },
+    user_name: String,
     email: String,
-    id: String,
-});
+    password: String,
+  });
 
-const userModel = mongoose.model('users', userSchema);
+const userModel = mongoose.model('user', userSchema);
 
 export default userModel;
